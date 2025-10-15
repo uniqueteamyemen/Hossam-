@@ -1,0 +1,29 @@
+# Hossam memory & sensitive files
+HOSSAM_BRAIN.json
+CONTEXT_EXPORT.js
+.ollama/models/
+mysql-data/mysql.sock
+
+# Temporary / logs
+*.log
+*.tmp
+*.bak
+node_modules/
+backup_local/
+
+# n8n temp & workflow files
+.n8n/
+
+# Vite logs
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Hossam custom automation folders
+workflows/*.json
+!workflows/example.json
+
+docs/*.md
+ai-partners/*.md
+
+# Local n8n backups
+.backup/

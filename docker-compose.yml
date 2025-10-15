@@ -1,0 +1,33 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - '5678:5678'
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=hossam2024
+    volumes:
+      - ./workflows:/home/node/.n8n
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=hossam2024
+      - MYSQL_DATABASE=hossam
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=hossam2024
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - '11434:11434'
+    volumes:
+      - ./.ollama:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped

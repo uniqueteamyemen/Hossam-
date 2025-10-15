@@ -1,0 +1,29 @@
+﻿services:
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - '5678:5678'
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=hossam2024
+    volumes:
+      - ./workflows:/home/node/.n8n
+
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=hossam
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=hossam2024
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - '11434:11434'
+    volumes:
+      - ./.ollama:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped

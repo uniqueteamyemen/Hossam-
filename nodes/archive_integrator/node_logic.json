@@ -1,0 +1,18 @@
+{
+  "ingestors": {
+    "functions": ["scan_onenote", "import_googledocs", "clone_github_repos", "crawl_filesystem"],
+    "immune_layers": ["validate_source_integrity", "log_ingestion_attempts"]
+  },
+  "classifiers": {
+    "functions": ["detect_content_domain", "apply_metadata_tags", "extract_key_entities"],
+    "immune_layers": ["validate_classification_rules", "log_tagging_decisions"]
+  },
+  "versioning": {
+    "functions": ["track_file_changes", "maintain_audit_trail", "manage_content_versions"],
+    "immune_layers": ["validate_version_integrity", "log_all_changes"]
+  },
+  "outputs": {
+    "functions": ["generate_dashboards", "export_audit_reports", "publish_readiness_status"],
+    "immune_layers": ["validate_output_formats", "log_export_operations"]
+  }
+}

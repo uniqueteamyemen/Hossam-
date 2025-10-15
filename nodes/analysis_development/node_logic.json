@@ -1,0 +1,18 @@
+{
+  "analysis": {
+    "functions": ["evaluate_node_health", "track_post_performance", "monitor_token_usage"],
+    "immune_layers": ["validate_metrics_schema", "log_analysis_events"]
+  },
+  "simulation": {
+    "functions": ["forecast_campaign_outcomes", "simulate_node_upgrade", "predict_token_load"],
+    "immune_layers": ["validate_simulation_inputs", "log_simulation_runs"]
+  },
+  "development": {
+    "functions": ["propose_new_node", "design_workflow", "generate_readme_template"],
+    "immune_layers": ["check_dependency_map", "log_proposal_history"]
+  },
+  "approval": {
+    "functions": ["request_executive_approval", "log_decision", "flag_pending_items"],
+    "immune_layers": ["validate_approval_chain", "lock_unauthorized_changes"]
+  }
+}
