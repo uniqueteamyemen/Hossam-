@@ -1,29 +1,39 @@
-# Hossam memory & sensitive files
-HOSSAM_BRAIN.json
-CONTEXT_EXPORT.js
-.ollama/models/
-mysql-data/mysql.sock
 
-# Temporary / logs
-*.log
-*.tmp
-*.bak
+
+nano .gitignore
+﻿# Node.js dependencies
 node_modules/
-backup_local/
+npm-debug.log
+yarn-error.log
 
 # n8n temp & workflow files
 .n8n/
 
-# Vite logs
+# Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# Hossam custom automation folders
+# حسام custom automation folders
 workflows/*.json
-!workflows/example.json
+!workflows/example.json   # keep at least one template tracked
 
 docs/*.md
 ai-partners/*.md
 
 # Local n8n backups
 .backup/
+
+# AI Models (large, do not track in Git)
+.ollama/models/
+
+# Hossam memory & context files (sensitive)
+HOSSAM_BRAIN.json
+CONTEXT_EXPORT.js
+
+# Backup folder
+backup_local/
+
+# Docker / service configs
+docker-compose.override.yml
+.env
+mysql-data/
